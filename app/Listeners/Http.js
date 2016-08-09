@@ -12,14 +12,14 @@ const Http = exports = module.exports = {};
  * @param  {Object} response
  */
 Http.handleError = function * (error, request, response) {
-  if (response.isJsonApiError(error)) {
-    try {
-      response.jsonApiError(error);
-    } catch (e) {
-      console.log(e);
-    }
-    return;
-  }
+  // if (response.isJsonApiError(error)) {
+  //   try {
+  //     response.jsonApiError(error);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  //   return;
+  // }
 
   /**
    * DEVELOPMENT REPORTER
