@@ -1,0 +1,6 @@
+{
+  "name": "Adonis App",
+  "description": "A simple app for working with node APIs and Servers.",
+  "repository": "https://github.com/adonisjs/adonis-framework",
+  "addons": ["heroku-postgresql"]
+}
