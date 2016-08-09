@@ -12,7 +12,7 @@ class AuthorController {
   }
 
   * store(request, response) {
-    const authorParams = request.jsonApi.getAttributesCamelCase(attributes);
+    const authorParams = request.jsonApi.getAttributesSnakeCase(attributes);
 
     const author = yield Author.create(Object.assign({}, authorParams));
     response.jsonApi('Author', author);
@@ -26,7 +26,7 @@ class AuthorController {
   }
 
   * update(request, response) {
-    const authorParams = request.jsonApi.getAttributesCamelCase(attributes);
+    const authorParams = request.jsonApi.getAttributesSnakeCase(attributes);
     const id = request.param('id');
     request.jsonApi.assertId(id);
 

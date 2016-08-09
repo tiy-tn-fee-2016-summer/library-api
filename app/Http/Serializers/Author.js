@@ -2,6 +2,6 @@ module.exports = {
   type: 'author',
 
   serializer: {
-    attributes: ['firstName', 'lastName'],
+    attributes: ['first_name', 'last_name'],
   },
 };
