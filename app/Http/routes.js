@@ -29,6 +29,12 @@ Route.group('api', () => {
 
   Route.resource('/authors', 'AuthorController')
     .only('store', 'update', 'destroy').middleware('auth');
+
+  Route.resource('/books', 'BookController')
+    .only('index', 'show');
+
+  Route.resource('/books', 'BookController')
+    .only('store', 'update', 'destroy').middleware('auth');
 }).prefix('/api');
 
 Route.group('simple', () => {
@@ -36,5 +42,11 @@ Route.group('simple', () => {
     .only('index', 'show');
 
   Route.resource('/authors', 'AuthorSimpleController')
+    .only('store', 'update', 'destroy');
+
+  Route.resource('/books', 'BookSimpleController')
+    .only('index', 'show');
+
+  Route.resource('/books', 'BookSimpleController')
     .only('store', 'update', 'destroy');
 }).prefix('/api');
