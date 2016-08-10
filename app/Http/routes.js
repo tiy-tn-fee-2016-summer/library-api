@@ -17,25 +17,23 @@
 
 const Route = use('Route');
 
-Route.group('api', () => {
-  Route.post('/register', 'UserController.store');
+Route.post('/register', 'UserController.store');
 
-  Route.post('/token-auth', 'SessionController.store');
+Route.post('/token-auth', 'SessionController.store');
 
-  Route.get('/user/current', 'UserController.current').middleware('auth');
+Route.get('/user/current', 'UserController.current').middleware('auth');
 
-  Route.resource('/authors', 'AuthorController')
-    .only('index', 'show');
+Route.resource('/api/authors', 'AuthorController')
+  .only('index', 'show');
 
-  Route.resource('/authors', 'AuthorController')
-    .only('store', 'update', 'destroy').middleware('auth');
+Route.resource('/api/authors', 'AuthorController')
+  .only('store', 'update', 'destroy').middleware('auth');
 
-  Route.resource('/books', 'BookController')
-    .only('index', 'show');
+Route.resource('/api/books', 'BookController')
+  .only('index', 'show');
 
-  Route.resource('/books', 'BookController')
-    .only('store', 'update', 'destroy').middleware('auth');
-}).prefix('/api');
+Route.resource('/api/books', 'BookController')
+  .only('store', 'update', 'destroy').middleware('auth');
 
 Route.resource('/simple/authors', 'AuthorSimpleController')
   .only('index', 'show');
