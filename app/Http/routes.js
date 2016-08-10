@@ -25,8 +25,16 @@ Route.group('api', () => {
   Route.get('/user/current', 'UserController.current').middleware('auth');
 
   Route.resource('/authors', 'AuthorController')
-    .only('index', 'show').middleware('auth');
+    .only('index', 'show');
 
   Route.resource('/authors', 'AuthorController')
     .only('store', 'update', 'destroy').middleware('auth');
+}).prefix('/api');
+
+Route.group('simple', () => {
+  Route.resource('/authors', 'AuthorSimpleController')
+    .only('index', 'show');
+
+  Route.resource('/authors', 'AuthorSimpleController')
+    .only('store', 'update', 'destroy');
 }).prefix('/api');
