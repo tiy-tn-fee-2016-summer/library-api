@@ -4,7 +4,7 @@ const Lucid = use('Lucid');
 
 class Book extends Lucid {
   author() {
-    return this.hasMany('App/Model/Author');
+    return this.belongsTo('App/Model/Author');
   }
 }
 
