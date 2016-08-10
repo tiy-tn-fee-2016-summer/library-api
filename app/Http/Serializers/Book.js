@@ -6,7 +6,7 @@ module.exports = {
       'title',
       'year',
       'is_digital',
-      'author_id',
+      'author',
     ],
 
     author: Object.assign({}, require('./Author').serializer, { ref: 'id', included: false }),

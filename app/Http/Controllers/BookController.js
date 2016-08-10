@@ -20,7 +20,6 @@ class BookController {
     const bookParams = request.jsonApi.getAttributesSnakeCase(attributes);
     const authorId = request.all().data.relationships.author.data.id;
 
-
     const book = yield Book.create(Object.assign({}, bookParams, {author_id: authorId}));
     response.jsonApi('Book', book);
   }
