@@ -1,5 +1,5 @@
 module.exports = {
-  type: 'author',
+  type: 'book',
 
   serializer: {
     attributes: [
@@ -9,6 +9,6 @@ module.exports = {
       'author_id',
     ],
 
-    works: Object.assign({}, require('./Book').serializer, { ref: 'id', included: false }),
+    author: Object.assign({}, require('./Author').serializer, { ref: 'id', included: false }),
   },
 };
