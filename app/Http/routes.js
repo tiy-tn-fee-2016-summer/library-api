@@ -49,4 +49,4 @@ Route.group('simple', () => {
 
   Route.resource('/books', 'BookSimpleController')
     .only('store', 'update', 'destroy');
-}).prefix('/api');
+}).prefix('/simple');
