@@ -23,11 +23,10 @@ Route.post('/token-auth', 'SessionController.store');
 
 Route.get('/user/current', 'UserController.current').middleware('auth');
 
-Route.resource('/api/authors', 'AuthorController')
-  .only('index', 'show');
+Route.resource('/api/authors', 'AuthorController');
 
-Route.resource('/api/authors', 'AuthorController')
-  .only('store', 'update', 'destroy').middleware('auth');
+// Route.resource('/api/authors', 'AuthorController')
+  // .only('store', 'update', 'destroy').middleware('auth');
 
 Route.resource('/api/books', 'BookController')
   .only('index', 'show');
