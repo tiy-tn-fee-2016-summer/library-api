@@ -9,6 +9,6 @@ module.exports = {
       'author',
     ],
 
-    author: Object.assign({}, require('./Author').serializer, { ref: 'id', included: false }),
+    author: Object.assign({}, { ref: 'id', included: false }),
   },
 };

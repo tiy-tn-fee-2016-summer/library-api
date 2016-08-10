@@ -4,6 +4,6 @@ module.exports = {
   serializer: {
     attributes: ['first_name', 'last_name', 'works'],
 
-    works: Object.assign({}, require('./Book').serializer, { ref: 'id', included: false }),
+    works: Object.assign({}, { ref: 'id', included: false }),
   },
 };
